@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "extends": [
+    "airbnb-base"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jquery": true,
+    "jasmine": true
+  },
+  "plugins": [
+    "requirejs"
+  ],
+  "globals": {
+    "angular": true,
+    "phoenix": true,
+    "requirejs": true,
+    "define": true,
+    "inject": true
+  },
+  "rules": {
+    "valid-jsdoc": [2, {
+      "requireReturn": false
+    }],
+    "jsdoc/check-param-names": 1,
+    "jsdoc/check-types": 1,
+    "jsdoc/newline-after-description": 1,
+    "jsdoc/require-description-complete-sentence": 1,
+    "jsdoc/require-param": 1,
+    "jsdoc/require-param-description": 1,
+    "jsdoc/require-returns-description": 0,
+    "comma-dangle": "off",
+    "import/no-amd": "off",
+    "max-len": "off",
+    "no-param-reassign": "off",
+    "linebreak-style": ["off", "windows"],
+    "import/extensions": "off",
+    "no-plusplus": "off",
+    "no-underscore-dangle": "off",
+    "no-console": "off",
+    "prefer-destructuring": "off"
+  }
+}
