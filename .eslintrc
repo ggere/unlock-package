@@ -10,9 +10,6 @@
     "jquery": true,
     "jasmine": true
   },
-  "plugins": [
-    "requirejs"
-  ],
   "globals": {
     "angular": true,
     "phoenix": true,

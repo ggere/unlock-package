@@ -5,7 +5,7 @@ const util = require('util');
 
 const debuglog = util.debuglog('unlock-package');
 const args = process.argv.slice(2);
-const filename = path.join(process.cwd() + '/package-lock.json');
+const filename = path.join(process.cwd(), '/package-lock.json');
 
 debuglog(`Working on: '${filename}'`);
 const content = fs.readFileSync(filename);
