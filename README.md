@@ -3,8 +3,8 @@
 npm package that unlocks a package from package-lock.json.  Only affects top level dependencies.
 
 This is to be used when a developer wants the most recent (with in the constraints specified in package.json) version
-of a dependency.  Useful if you develop a library and make sure of that library and wants your build to grab the latest
-version, but at the same time want to make use of the package-lock benefits for other packages.
+of a dependency.  Useful if you develop a library and make use of that library in a different project and want your project to always grab the latest
+version, but at the same time make use of the package-lock benefits for other packages.
 
 ## Installation
 
