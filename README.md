@@ -1,6 +1,6 @@
 # unlock-package
 
-npm package that unlocks a package from package-lock.json.  Only affects top level dependencies.
+npm package that unlocks (removes) a package from package-lock.json.
 
 This is to be used when a developer wants the most recent (with in the constraints specified in package.json) version
 of a dependency.  Useful if you develop a library and make use of that library in a different project and want your project to always grab the latest
@@ -19,7 +19,6 @@ As part of your build process insert the follow before your npm install step:
 ``` bat
 node_modules\.bin\unlock-package <package,package,etc>
 npm install
-npm ls --depth=0
 ```
 
-Note: it might be useful to use `npm ls` to audit the package that was installed.
+Note: it is recommended that the `package-lock.json` file is captured in your package output so that a record is kept of the versions of the unlocked packages that were installed.

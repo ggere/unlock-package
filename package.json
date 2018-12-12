@@ -4,14 +4,14 @@
   "description": "npm package that unlocks a package from package-lock.json",
   "main": "unlock.js",
   "scripts": {
-    "test": "jest ."
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ggere/unlock-package.git"
   },
   "bin": {
-    "unlock-package": "./unlock.js"
+    "unlock-package": "./cli.js"
   },
   "keywords": [
     "npm",
@@ -26,9 +26,11 @@
   },
   "homepage": "https://github.com/ggere/unlock-package#readme",
   "devDependencies": {
-    "eslint": "^5.9.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.10.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.6.0"
+    "mocha": "^5.2.0",
+    "mock-fs": "^4.7.0"
   }
 }

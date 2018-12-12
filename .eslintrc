@@ -8,14 +8,7 @@
     "node": true,
     "es6": true,
     "jquery": true,
-    "jasmine": true
-  },
-  "globals": {
-    "angular": true,
-    "phoenix": true,
-    "requirejs": true,
-    "define": true,
-    "inject": true
+    "mocha": true
   },
   "rules": {
     "valid-jsdoc": [2, {
