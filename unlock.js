@@ -15,7 +15,14 @@ module.exports = {
       return false;
     }
 
-    const object = JSON.parse(content);
+    let object;
+    try {
+      object = JSON.parse(content);
+    } catch (err) {
+      console.log(`Error: '${packageFile}' contains invalid json.`);
+      return false;
+    }
+
     if (!object || !object.dependencies) {
       console.log('Invalid package-lock file.');
       return false;

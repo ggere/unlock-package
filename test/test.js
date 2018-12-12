@@ -25,7 +25,8 @@ function setupMockFile() {
         }
       }
     }`,
-    'package-lock.invalid-jason': '{'
+    'package-lock.invalid-json': '{{{[[[][[[[,,',
+    'package-lock.missingdep-json': '{}'
   });
 }
 
@@ -72,6 +73,10 @@ describe('unlock-package', () => {
   it('should fail gracefully if json is invalid', () => {
     assert.isFalse(unlock('package-lock.invalid-json', 'bob'));
   });
+
+  it('should fail gracefully if json does not contain dependencies property', () => {
+    assert.isFalse(unlock('package-lock.missingdep-json', 'bob'));
+  });  
 
   it('should warn and complete gracefully if empty package list', () => {
     assert.isTrue(unlock('package-lock.json', ''));
