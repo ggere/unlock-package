@@ -66,8 +66,8 @@ describe('unlock-package', () => {
     assert.isTrue(containsPackage('package-lock.json', 'bar'));
   });
 
-  it('should fail gracefully if file does not exist', () => {
-    assert.isFalse(unlock('pblarney.json', 'bob'));
+  it('should succeed if file does not exist because then its not locked', () => {
+    assert.isTrue(unlock('pblarney.json', 'bob'));
   });
 
   it('should fail gracefully if json is invalid', () => {
@@ -76,7 +76,7 @@ describe('unlock-package', () => {
 
   it('should fail gracefully if json does not contain dependencies property', () => {
     assert.isFalse(unlock('package-lock.missingdep-json', 'bob'));
-  });  
+  });
 
   it('should warn and complete gracefully if empty package list', () => {
     assert.isTrue(unlock('package-lock.json', ''));

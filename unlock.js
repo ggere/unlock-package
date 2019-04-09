@@ -7,19 +7,20 @@ module.exports = {
 
   unlockPackages: (packageFile, packages) => {
     debuglog(`Working on: '${packageFile}'`);
+
     let content;
     try {
       content = fs.readFileSync(packageFile);
     } catch (err) {
-      console.log(`Error: '${packageFile}' does not exit.`);
-      return false;
+      console.log(`Warning: '${packageFile}' can not be read, assuming it is not locked: ${err}`);
+      return true;
     }
 
     let object;
     try {
       object = JSON.parse(content);
     } catch (err) {
-      console.log(`Error: '${packageFile}' contains invalid json.`);
+      console.log(`Error: '${packageFile}' contains invalid json: ${err}`);
       return false;
     }
 
