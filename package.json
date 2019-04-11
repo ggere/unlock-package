@@ -1,6 +1,6 @@
 {
   "name": "unlock-package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "npm package that unlocks a package from package-lock.json",
   "main": "unlock.js",
   "scripts": {
