@@ -8,12 +8,17 @@ module.exports = {
   unlockPackages: (packageFile, packages) => {
     debuglog(`Working on: '${packageFile}'`);
 
+    if (!fs.existsSync(packageFile)) {
+      // if the file doesn't exist (npm install never run) then it's not locked so succeed
+      return true;
+    }
+
     let content;
     try {
       content = fs.readFileSync(packageFile);
     } catch (err) {
-      console.log(`Warning: '${packageFile}' can not be read, assuming it is not locked: ${err}`);
-      return true;
+      console.log(`Error: '${packageFile}' can not be read: ${err}`);
+      return false;
     }
 
     let object;

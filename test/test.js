@@ -26,7 +26,10 @@ function setupMockFile() {
       }
     }`,
     'package-lock.invalid-json': '{{{[[[][[[[,,',
-    'package-lock.missingdep-json': '{}'
+    'package-lock.missingdep-json': '{}',
+    lockedFile: mockfs.file({
+      mode: 0
+    })
   });
 }
 
@@ -68,6 +71,10 @@ describe('unlock-package', () => {
 
   it('should succeed if file does not exist because then its not locked', () => {
     assert.isTrue(unlock('pblarney.json', 'bob'));
+  });
+
+  it('should fail if file can not be read', () => {
+    assert.isFalse(unlock('lockedFile', 'bob'));
   });
 
   it('should fail gracefully if json is invalid', () => {
